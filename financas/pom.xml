@@ -13,7 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>financas</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Projeto para controle de Finanças Pessoais</description>
 	<url/>
 	<licenses>
 		<license/>
