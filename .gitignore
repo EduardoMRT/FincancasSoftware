@@ -1,0 +1,70 @@
+# Excluir arquivos gerados pelo sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos do IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Build e artefatos gerados
+target/
+build/
+*.war
+*.ear
+*.jar
+
+# Arquivos de log
+*.log
+*.tmp
+logs/
+
+# Configurações locais de ambiente
+.env
+*.properties
+*.yml
+*.yaml
+
+# Arquivos Maven
+.mvn/
+!**/src/main/resources/
+
+# Arquivos Gradle
+.gradle/
+build/
+!gradle-wrapper.jar
+
+# Configurações locais de execução no IntelliJ
+run/
+*.jhistory
+*.jdb
+
+# Configuração de containers (Docker, Kubernetes)
+*.env
+docker-compose.override.yml
+
+# Cache e metadados de IDEs
+.vscode/
+*.sublime-workspace
+*.swp
+*.bak
+
+# Arquivos temporários
+*.class
+*.swp
+*.tmp
+*.~*
+
+# Banco de dados local e outros dados
+*.db
+*.sqlite
+
+# Arquivos de configuração sensíveis (certificados ou chaves privadas)
+*.pem
+*.key
+*.crt
+
+# Configurações do sistema operacional (Linux/Windows/Mac)
+*.lock
