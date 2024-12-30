@@ -1,24 +1,19 @@
 package br.com.eduardo.financas.controller;
 
 import br.com.eduardo.financas.model.Pessoa;
-import br.com.eduardo.financas.model.Usuario;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.core.user.OAuth2User;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
 
-@RestController
+@Controller
 public class HomeController {
 
-    @GetMapping("/")
-    public String home() {
-        return "Inicio";
-    }
-
     @GetMapping("/user")
-    public Map<String, Object> getUserDetails(@AuthenticationPrincipal OAuth2User principal) {
+    public String getUserDetails(@AuthenticationPrincipal OAuth2User principal, Model model) {
         Pessoa pessoa = new Pessoa();
         Map<String, Object> attributes = principal.getAttributes();
         if (attributes.containsKey("name")) {
@@ -26,6 +21,9 @@ public class HomeController {
         }
 
         System.out.println("Usuário criado: " + pessoa);
-        return attributes;
+        model.addAttribute("nome", pessoa.getNome());
+        return "inicio";
     }
+
+
 }

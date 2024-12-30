@@ -20,8 +20,12 @@ public class SecurityConfig {
                     auth.requestMatchers("/").permitAll();
                     auth.anyRequest().authenticated();
                 })
-                .formLogin(withDefaults())
-                .oauth2Login(withDefaults())
+                .formLogin(form -> form
+                        .defaultSuccessUrl("/user", true)
+                )
+                .oauth2Login(oauth2 -> oauth2
+                        .defaultSuccessUrl("/user", true)
+                )
                 .build();
     }
 }
